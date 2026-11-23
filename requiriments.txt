@@ -1,0 +1,147 @@
+# =========================
+# CORE FRAMEWORK
+# =========================
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Shared Neurana core (local editable). CI/prod: pin git+…@vX.Y.Z when published.
+-e ../../libs/ne-core-lib[email,storage]
+
+
+# =========================
+# DJANGO EXTENSIONS
+# =========================
+django-cors-headers==4.3.1
+django-environ==0.11.2
+django-redis==5.4.0
+django-tenants==3.5.0
+djangorestframework-simplejwt==5.3.0
+drf-yasg==1.21.7
+
+# =========================
+# DATABASE / CACHE
+# =========================
+psycopg2==2.9.9
+redis==7.4.0
+
+# =========================
+# REALTIME / WEBSOCKETS
+# =========================
+# Channels sirve el protocolo WebSocket sobre ASGI; daphne es el servidor
+# ASGI (integra runserver en dev). channels-redis usa el mismo Redis del
+# resto del stack (DB 4) como channel layer para fan-out entre procesos.
+channels==4.1.0
+channels-redis==4.2.0
+daphne==4.1.2
+# --- Dependencias transitivas de daphne/channels (twisted + TLS + msgpack).
+#     Pineadas para reproducibilidad; coinciden con el runtime nativo Python 3.11.
+Twisted==26.4.0
+autobahn==26.6.2
+txaio==26.6.1
+hyperlink==21.0.0
+Automat==25.4.16
+constantly==23.10.4
+incremental==24.11.0
+zope.interface==8.5
+msgpack==1.2.1
+cbor2==6.1.2
+attrs==26.1.0
+service-identity==26.1.0
+cryptography==49.0.0
+pyOpenSSL==26.3.0
+ujson==5.13.0
+
+# =========================
+# BACKGROUND TASKS
+# =========================
+# Celery 5.4 is the latest 5.x with full Redis 7 + Python 3.11 support.
+# celery-redbeat replaces the default Beat scheduler so multiple Beat
+# replicas can run safely (distributed lock + schedule in Redis).
+celery==5.4.0
+celery-redbeat==2.2.0
+
+# =========================
+# STORAGE / EXTERNAL SERVICES
+# =========================
+minio==7.2.7
+resend==2.39.0             # core/email — adapter Resend (EMAIL_PROVIDER=resend)
+# Cliente HTTP del ecosistema Neurana (necore.ecosystem.client) + transitivas.
+httpx==0.28.1
+httpcore==1.0.9
+h11==0.16.0
+anyio==4.15.1
+idna==3.18
+
+# =========================
+# INTELIGENCIA ARTIFICIAL (core/ai)
+# =========================
+# Módulo transversal de IA por puertos/adaptadores (ver docs/plan-ia/, FASE 0).
+# El proveedor por defecto es 'fake' (sin red ni API key), así que el SDK del
+# proveedor gestionado es OPCIONAL: instálalo solo cuando AI_PROVIDER='anthropic'.
+# Descomenta y fija la versión disponible tras `pip index versions anthropic`:
+# anthropic==<version>     # SDK oficial de Anthropic (Claude) — cubo 1 (GenAI texto)
+
+# =========================
+# DOCUMENT GENERATION
+# =========================
+Jinja2==3.1.4              # Sandboxed template engine for document_template
+playwright==1.60.0         # HTML → PDF via headless Chromium (no system native libs; run `playwright install chromium` once)
+openpyxl==3.1.5            # XLSX renderer (write-only streaming mode)
+lxml==5.3.0                # XML renderer
+jsonpath-ng==1.6.1         # JSONPath resolution for tabular rows_path
+
+# =========================
+# TESTING
+# =========================
+pytest==8.3.5
+pytest-django==4.9.0
+pytest-cov==7.1.0
+
+# =========================
+# SECURITY / AUTH
+# =========================
+PyJWT==2.10.1
+argon2-cffi==25.1.0
+argon2-cffi-bindings==25.1.0
+pycryptodome==3.23.0
+
+# =========================
+# DATA / VALIDATION
+# =========================
+pydantic==2.6.0
+pydantic_core==2.16.1
+pydantic[email]
+
+# =========================
+# UTILITIES
+# =========================
+Faker==33.1.0
+Pillow==10.1.0
+python-dateutil==2.9.0.post0
+pytz==2025.2
+PyYAML==6.0.3
+typing_extensions==4.16.0
+uritemplate==4.2.0
+urllib3==2.6.3
+six==1.17.0
+inflection==0.5.1
+packaging==25.0
+
+# =========================
+# DJANGO INTERNAL / REQUIRED
+# =========================
+asgiref==3.10.0
+sqlparse==0.5.3
+tzdata==2025.2
+
+# =========================
+# LOW-LEVEL DEPENDENCIES
+# =========================
+cffi==2.0.0
+pycparser==3.0
+certifi==2026.2.25
+colorama==0.4.6
+concurrent-log-handler==0.9.29
+pluggy==1.6.0
+iniconfig==2.3.0
+annotated-types==0.7.0

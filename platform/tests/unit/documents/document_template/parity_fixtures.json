@@ -1,0 +1,53 @@
+{
+    "$schema_comment": "Shared fixtures executed in both Jinja (backend) and Mustache (frontend) engines. They MUST produce the same output. If you add a fixture here, add a matching test on both sides. Filename is referenced by parity tests via relative path; do not move it without updating both suites.",
+    "cases": [
+        {
+            "name": "plain_text_passthrough",
+            "template": "Hello world",
+            "data": {},
+            "expected": "Hello world"
+        },
+        {
+            "name": "simple_variable",
+            "template": "Hello {{ name }}",
+            "data": { "name": "Ana" },
+            "expected": "Hello Ana"
+        },
+        {
+            "name": "two_variables",
+            "template": "{{ greeting }}, {{ name }}!",
+            "data": { "greeting": "Hi", "name": "Bob" },
+            "expected": "Hi, Bob!"
+        },
+        {
+            "name": "number_variable",
+            "template": "Total: {{ amount }}",
+            "data": { "amount": 99 },
+            "expected": "Total: 99"
+        },
+        {
+            "name": "if_truthy_includes_block",
+            "template": "{% if active %}ON{% endif %}",
+            "data": { "active": true },
+            "expected": "ON"
+        },
+        {
+            "name": "if_falsy_omits_block",
+            "template": "{% if active %}ON{% endif %}",
+            "data": { "active": false },
+            "expected": ""
+        },
+        {
+            "name": "if_with_empty_string_is_falsy",
+            "template": "[{% if name %}{{ name }}{% endif %}]",
+            "data": { "name": "" },
+            "expected": "[]"
+        },
+        {
+            "name": "if_with_non_empty_string_is_truthy",
+            "template": "[{% if name %}{{ name }}{% endif %}]",
+            "data": { "name": "X" },
+            "expected": "[X]"
+        }
+    ]
+}

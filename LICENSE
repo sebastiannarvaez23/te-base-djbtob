@@ -1,0 +1,137 @@
+PROPRIETARY SOFTWARE LICENSE AGREEMENT
+
+BASE
+All Rights Reserved
+
+1. DEFINITIONS
+
+For the purposes of this License Agreement:
+
+* "Software" refers to all source code, object code, architecture, APIs, designs, algorithms, documentation, configurations, and any related materials belonging to the multi-tenant platform known as *the base*.
+* "Owner" refers exclusively to the legal creator and sole rights holder of the Software.
+* "User" refers to any individual or entity accessing, viewing, or interacting with the Software in any form.
+* "Use" includes execution, modification, copying, studying, distributing, deploying, or any interaction with the Software.
+
+2. OWNERSHIP
+
+This Software is the exclusive property of the Owner.
+
+All rights, including but not limited to intellectual property rights, trade secrets, patents, copyrights, and any derivative rights are strictly reserved.
+
+No rights are granted to any User under this License.
+
+3. LICENSE GRANT
+
+No license is granted.
+
+Access to the Software, whether authorized or unauthorized, does not constitute permission to use, copy, modify, distribute, or exploit the Software in any way.
+
+Only the Owner has the right to:
+
+* Use the Software
+* Modify the Software
+* Deploy the Software
+* Commercialize the Software
+* Grant permissions explicitly through written agreements
+
+4. STRICT PROHIBITIONS
+
+Under no circumstances shall any User:
+
+* Copy, reproduce, or duplicate the Software in whole or in part
+* Modify, adapt, translate, reverse engineer, decompile, or disassemble the Software
+* Distribute, sublicense, lease, sell, or transfer the Software
+* Use the Software for commercial or non-commercial purposes
+* Access or attempt to access the source code without explicit authorization
+* Use the Software to build competing or derivative products
+* Extract, analyze, or replicate business logic, workflows, or architecture
+* Circumvent any security mechanisms implemented in the Software
+* Store, share, or expose the Software in public or private repositories
+* Use automated tools (including AI) to analyze or reconstruct the Software
+
+Any of the above actions constitutes a severe violation of this License.
+
+5. CONFIDENTIALITY
+
+The Software is confidential and constitutes a trade secret.
+
+Any exposure, leakage, or unauthorized access—intentional or accidental—must be considered a breach of confidentiality.
+
+Users with authorized access (if ever granted) must:
+
+* Protect the Software with strict security measures
+* Avoid disclosure to any third party
+* Immediately report any security incident
+
+6. SECURITY REQUIREMENTS
+
+Any environment where the Software is stored or executed must:
+
+* Implement strict access control mechanisms
+* Prevent unauthorized copying or extraction
+* Use encryption where applicable
+* Log and monitor all access attempts
+
+Failure to comply with these measures is considered negligence and a violation of this agreement.
+
+7. NO OPEN SOURCE
+
+This Software is NOT open source.
+
+No part of the Software may be:
+
+* Published publicly
+* Shared in open repositories
+* Licensed under open-source terms
+
+8. INTELLECTUAL PROPERTY PROTECTION
+
+All components of the Software—including:
+
+* System architecture
+* Microservice designs
+* APIs and contracts
+* Business logic
+* Data models
+* UI/UX designs
+
+are protected as intellectual property and trade secrets.
+
+Any attempt to replicate or imitate these elements is strictly prohibited.
+
+9. LEGAL ENFORCEMENT
+
+Any violation of this License will result in:
+
+* Immediate legal action
+* Claims for damages (including financial, reputational, and operational damages)
+* Injunctive relief to prevent further use
+* Possible criminal liability depending on jurisdiction
+
+The Owner reserves the right to pursue maximum legal penalties permitted by law.
+
+10. NO WARRANTY
+
+The Software is provided strictly under the Owner’s control.
+
+No warranties are granted, expressed or implied.
+
+11. TERMINATION
+
+Any unauthorized access or breach automatically results in:
+
+* Immediate termination of any implied or explicit access
+* Mandatory deletion of all copies of the Software
+* Legal enforcement actions
+
+12. GOVERNING LAW
+
+This Agreement shall be governed by and interpreted in accordance with applicable laws in the jurisdiction determined by the Owner.
+
+13. FINAL CLAUSE
+
+By accessing, viewing, or interacting with the Software in any way, the User acknowledges and agrees to be fully bound by this License.
+
+If the User does not agree, they must immediately cease all interaction with the Software.
+
+© All Rights Reserved. Unauthorized use is strictly prohibited.

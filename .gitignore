@@ -1,6 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
 
 # C extensions
@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -27,8 +28,8 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
-#   Usually these files are written by a python script from a template
-#   before PyInstaller builds the exe, so as to inject date/other infos into it.
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -46,11 +47,9 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py.cover
-*.lcov
+*.py,cover
 .hypothesis/
 .pytest_cache/
-cover/
 
 # Translations
 *.mo
@@ -73,7 +72,6 @@ instance/
 docs/_build/
 
 # PyBuilder
-.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -84,74 +82,27 @@ profile_default/
 ipython_config.py
 
 # pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-# Pipfile.lock
+#Pipfile.lock
 
-# uv
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-# uv.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-# poetry.lock
-# poetry.toml
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-# pdm.lock
-# pdm.toml
-.pdm-python
-.pdm-build/
-
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-# pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi/*
-!.pixi/config.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
 # Celery stuff
-celerybeat-schedule*
+celerybeat-schedule
 celerybeat.pid
-
-# Redis
-*.rdb
-*.aof
-*.pid
-
-# RabbitMQ
-mnesia/
-rabbitmq/
-rabbitmq-data/
-
-# ActiveMQ
-activemq-data/
 
 # SageMath parsed files
 *.sage.py
 
 # Environments
 .env
-.envrc
 .venv
 env/
 venv/
@@ -166,7 +117,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs/Zensical documentation
+# mkdocs documentation
 /site
 
 # mypy
@@ -177,44 +128,94 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# pytype static type analyzer
-.pytype/
+# Legacy migrations remain ignored until their data migrations are audited.
+# Schema-only / audited modules are versioned explicitly below.
+**/migrations/*
+!client/features/communication/assistant/chat/migrations/*.py
+!client/features/communication/assistant/credentials/migrations/*.py
+!client/features/communication/messaging/inbox/migrations/*.py
+!client/features/integrations/connections/profile/migrations/*.py
+!client/features/logging/audit_trail/audit/migrations/*.py
+!client/features/logging/ops/integration/migrations/*.py
+!client/features/logging/ops/inventory/migrations/*.py
+!client/features/logging/ops/operations/migrations/*.py
+!client/features/logging/security/security/migrations/*.py
+!client/features/logging/system/config/migrations/*.py
+!client/features/partners/third_parties/party/migrations/*.py
+!client/features/security/identity/identity/migrations/*.py
+!client/features/security/identity/module_filters/migrations/*.py
+!client/features/security/access/entity_grants/migrations/*.py
+!client/features/security/lifecycle/auth/migrations/*.py
+!client/features/security/lifecycle/onboarding/migrations/*.py
+!client/features/security/lifecycle/registration/migrations/*.py
+!client/features/warehouse/foundation/migrations/*.py
+!client/features/warehouse/fulfillment/dispatches/migrations/*.py
+!client/features/warehouse/fulfillment/orders/migrations/*.py
+!client/features/warehouse/fulfillment/packing/migrations/*.py
+!client/features/warehouse/fulfillment/picking/migrations/*.py
+!client/features/warehouse/inbound/receiving/migrations/*.py
+!client/features/warehouse/inbound/returns/migrations/*.py
+!client/features/warehouse/inventory/balances/migrations/*.py
+!client/features/warehouse/inventory/reference/migrations/*.py
+!client/features/warehouse/inventory/stock/migrations/*.py
+!client/features/warehouse/ops/operations/migrations/*.py
+!client/features/warehouse/site/facilities/migrations/*.py
+!client/features/warehouse/site/layout/migrations/*.py
+!client/features/warehouse/site/topology/migrations/*.py
+!client/features/warehouse/site/topology_share/migrations/*.py
+!handbook/features/docs/content/page/migrations/*.py
+!handbook/features/docs/governance/change_request/migrations/*.py
+!platform/features/analytics/control/ctl/migrations/*.py
+!platform/features/billing/commerce/billing_concept/migrations/*.py
+!platform/features/billing/commerce/invoice/migrations/*.py
+!platform/features/billing/commerce/payment_method/migrations/*.py
+!platform/features/billing/commerce/payments/migrations/*.py
+!platform/features/billing/commerce/promotion/migrations/*.py
+!platform/features/billing/commerce/refund/migrations/*.py
+!platform/features/billing/commerce/tax/migrations/*.py
+!platform/features/billing/subscription/subscription/migrations/*.py
+!platform/features/billing/subscription/subscription_limit/migrations/*.py
+!platform/features/communication/email/email_sender/migrations/*.py
+!platform/features/communication/email/email_template/migrations/*.py
+!platform/features/communication/messaging/inbox/migrations/*.py
+!platform/features/company/tenant/company/migrations/*.py
+!platform/features/compliance/policy/policy/migrations/*.py
+!platform/features/configuration/assistant/assistant/migrations/*.py
+!platform/features/configuration/ai/capability_control/migrations/*.py
+!platform/features/configuration/ai/evals/migrations/*.py
+!platform/features/configuration/ai/model_routing/migrations/*.py
+!platform/features/configuration/landing/landing/migrations/*.py
+!platform/features/configuration/landing/testimonial/migrations/*.py
+!platform/features/configuration/parameters/parameter/migrations/*.py
+!platform/features/configuration/parameters/parameter_type/migrations/*.py
+!platform/features/documents/document_template/document_template/migrations/*.py
+!platform/features/geography/currency/currency/migrations/*.py
+!platform/features/geography/location/location/migrations/*.py
+!platform/features/integrations/connector_catalog/connector_catalog/migrations/*.py
+!platform/features/release/feature_flag/feature_flag/migrations/*.py
+!platform/features/security/access/functionalities/migrations/*.py
+!platform/features/security/access/modules/migrations/*.py
+!platform/features/security/access/roles/migrations/*.py
+!platform/features/security/access/sections/migrations/*.py
+!platform/features/security/auth/auth/migrations/*.py
+!platform/features/security/identity/identity/migrations/*.py
+!platform/features/security/identity/users/migrations/*.py
+!platform/features/support/incidents/incident/migrations/*.py
+!platform/features/support/ops/task_monitor/migrations/*.py
+!platform/features/support/sessions/session/migrations/*.py
+*.pem
 
-# Cython debug symbols
-cython_debug/
+CLAUDE.md
+.claude/
 
-# PyCharm
-#   JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#   be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#   and can be added to the global gitignore or merged into this file.  For a more nuclear
-#   option (not recommended) you can uncomment the following to ignore the entire idea folder.
-# .idea/
+data/
+staticfiles/
+notes.txt
 
-# Abstra
-#   Abstra is an AI-powered process automation framework.
-#   Ignore directories containing user credentials, local state, and settings.
-#   Learn more at https://abstra.io/docs
-.abstra/
+.pendings/
+.cursor/
+logs/
+.necore_shim_backup/
 
-# Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore that
-#   can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, you
-#   could uncomment the following to ignore the entire vscode folder
-# .vscode/
-# Temporary file for partial code execution
-tempCodeRunnerFile.py
-
-# Ruff stuff:
-.ruff_cache/
-
-# PyPI configuration file
-.pypirc
-
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
-
-# Streamlit
-.streamlit/secrets.toml
+# Ecosystem signing keys (never commit)
+secrets/

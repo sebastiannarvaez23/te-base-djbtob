@@ -1,0 +1,36 @@
+"""Renewal integration with gift benefits."""
+
+from decimal import Decimal
+
+import pytest
+
+from platform.features.billing.commerce.promotion import composition
+from platform.features.billing.subscription.subscription.infrastructure.repositories import DjangoSubscriptionRepository
+from platform.tests.integration.billing.promotion.conftest import create_voucher, redeem_voucher
+
+pytestmark = [pytest.mark.integration, pytest.mark.django_db]
+
+
+def test_g3_renewal_skips_charge_with_active_gift(
+    promo_repo, company_a, plan_pro, validity,
+):
+    DjangoSubscriptionRepository().activate_plan(company_a.id, plan_pro.id)
+    voucher = create_voucher(
+        promo_repo,
+        voucher_type='GIFT',
+        scope='OPEN',
+        subscription_ids=[plan_pro.id],
+        benefit_months=3,
+        validity=validity,
+    )
+    redeem_voucher(
+        serial=voucher.serial,
+        subscription_id=plan_pro.id,
+        company_id=company_a.id,
+        context='SETTINGS',
+        idempotency_key='renew-gift-1',
+    )
+    amount, meta, skip = composition.get_renewal_charge_amount(company_a.id, plan_pro.price)
+    assert skip is True
+    assert amount == Decimal('0')
+    assert meta.get('voucher_type') == 'GIFT'
